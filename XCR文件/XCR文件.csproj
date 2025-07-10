@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="BaseFile加密后.bin" />
+    <None Remove="BaseFile解密后.bin" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="BaseFile加密后.bin" />
+    <EmbeddedResource Include="BaseFile解密后.bin" />
+  </ItemGroup>
+
+</Project>
