@@ -53,8 +53,8 @@ namespace XCR文件
             {
                 listBox1.SelectedIndex = i;
                 XCRFile xCRFile = listBox1.SelectedItem as XCRFile;
-                string text = XCR.ReadStringDecrypt((XCRFile)listBox1.SelectedItem);
-                File.WriteAllText(path + xCRFile.FileName, text);
+                var bytes = XCR.ReadByteDecrypt((XCRFile)listBox1.SelectedItem);
+                File.WriteAllBytes(path + xCRFile.FileName, bytes);
             }
         }
 

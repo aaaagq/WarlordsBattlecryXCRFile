@@ -112,6 +112,20 @@ namespace XCR文件
             string result = Encoding.ASCII.GetString(fileData2, offset, (int)length).Split('\0')[0];
             return result;
         }
+        public static byte[] ReadByteDecrypt(XCRFile xCRFile)
+        {
+            if (xCRFile == null) return new byte[1];
+            int offset = xCRFile.Offset;
+            long length = xCRFile.Size;
+            if (offset + length > fileData2.Length)
+            {
+                length = fileData2.Length - offset;
+            }
+            byte[] result = new byte[length];
+            Array.Copy(fileData2, offset, result, 0, length);
+            //Encoding.ASCII.GetString(fileData2, offset, (int)length);
+            return result;
+        }
         public static string ReadString(int offset, int length)
         {
             if (offset + length > fileData.Length)
